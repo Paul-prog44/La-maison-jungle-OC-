@@ -4,18 +4,27 @@ function ShoppingList() {
 
     let categories = [];
 
-plantList.forEach(function(plant) {
-    if (!categories.includes(plant.category)) {
-        categories.push(plant.category);
-    }
-})
+    plantList.forEach(function(plant) {
+        if (!categories.includes(plant.category)) {
+            categories.push(plant.category);
+        }
+    })
 
     return (
+        <div>
         <ul>
-            {categories.map((plant, index) => (
-                <li key={`${plant}-${index}`}>{ plant }</li>
+            {categories.map((category, index) => (
+                <li key={`${category}-${index}`}>{ category }</li>
             ))}
-        </ul>)
+        </ul>
+        <ul>
+            {plantList.map((plant) => (
+                <li key={plant.id}>{plant.name}</li>
+            ))}
+        </ul>
+        </div>
+        )
+            
     
 }
 
