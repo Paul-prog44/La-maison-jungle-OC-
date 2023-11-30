@@ -18,7 +18,7 @@ export const plantList = [
 		light: 3,
 		water: 1,
 		cover: monstera,
-		happiness: 3
+		happiness: 2
 	},
 	{
 		name: 'pothos argenté',
@@ -36,7 +36,7 @@ export const plantList = [
 		light: 3,
 		water: 1,
 		cover: monstera,
-		happiness: 3
+		happiness: 1
 	},
 	{
 		name: 'olivier',
@@ -73,7 +73,7 @@ export const plantList = [
 		light: 2,
 		water: 1,
 		cover: monstera,
-		happiness: 3
+		happiness: 2
 	},
 	{
 		name: 'succulente',
