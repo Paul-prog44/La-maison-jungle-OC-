@@ -3,7 +3,7 @@ import '../styles/ShoppingList.css'
 import PlantItem from './PlantItem';
 
 //Fonction d'affichage des plantes dispos
-function ShoppingList() {
+function ShoppingList({ cart, updateCart }) {
 
     //Filtre des catégories pour éviter redondance
     let categories = [];
@@ -22,6 +22,7 @@ function ShoppingList() {
             </ul>
             <ul className='lmj-plant-list'>
                 {plantList.map(({id, cover, name, water, light, happiness}) => (
+                    <div key={id}>
                     <PlantItem
                         id={id}
                         cover={cover}
@@ -30,7 +31,8 @@ function ShoppingList() {
                         light={light}
                         happiness={happiness}
                         />
-                
+                    <button onClick={() => updateCart(cart + 1)}>Ajouter</button>
+                    </div>
                     
                 ))}
             </ul>
