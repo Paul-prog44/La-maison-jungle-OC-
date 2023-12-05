@@ -4,13 +4,18 @@ import ShoppingList from './ShoppingList';
 import Footer from './Footer';
 import '../styles/Layout.css';
 import logo from '../assets/logo.png'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 
 function App() {
-  //Initialisation du state Cart en tableau vide
-  const [cart, updateCart] = useState([])
+  //Vérification du localStorage pour charger le panier
+  const savedCart = localStorage.getItem('cart')
+    //Initialisation du state Cart en tableau vide si 
+	const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : [])
+	useEffect(() => {
+		localStorage.setItem('cart', JSON.stringify(cart))
+	}, [cart])
 
   return <div>
             <Banner>
