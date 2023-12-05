@@ -1,5 +1,5 @@
 import "../styles/Cart.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function Cart({ cart, updateCart }) {
     const [isOpen, setIsOpen] = useState(true)
@@ -7,6 +7,12 @@ function Cart({ cart, updateCart }) {
 		(acc, plantType) => acc + plantType.amount * plantType.price,
 		0
 	)
+    
+    //useEffect se déclenche à chaque rendu du composant, le 2e parametre de useEffect indique l'élement qui trigger la fonction
+    useEffect(() => {
+        document.title = `LMJ: ${total}€ d'achats`
+    }, [total])
+    
 
     return isOpen ? (
         <div className='lmj-cart'>
