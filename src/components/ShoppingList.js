@@ -12,7 +12,7 @@ function ShoppingList({ cart, updateCart }) {
             categories.push(plant.category);
         }
     })
-
+    
     return (
         <div>
             <ul>

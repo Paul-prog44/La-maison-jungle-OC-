@@ -18,7 +18,8 @@ export const plantList = [
 		light: 2,
 		water: 3,
 		cover: monstera,
-		happiness: 2
+		happiness: 2,
+		price : 14
 	},
 	{
 		name: 'mint',
@@ -27,7 +28,8 @@ export const plantList = [
 		light: 3,
 		water: 1,
 		cover: mint,
-		happiness: 2
+		happiness: 2,
+		price : 13
 	},
 	{
 		name: 'lyrata',
@@ -36,7 +38,8 @@ export const plantList = [
 		light: 1,
 		water: 2,
 		cover: lyrata,
-		happiness: 2
+		happiness: 2,
+		price : 10
 	},
 	{
 		name: 'calathea',
@@ -45,7 +48,8 @@ export const plantList = [
 		light: 3,
 		water: 1,
 		cover: calathea,
-		happiness: 1
+		happiness: 1,
+		price : 15
 	},
 	{
 		name: 'cactus',
@@ -54,7 +58,8 @@ export const plantList = [
 		light: 3,
 		water: 1,
 		cover: cactus,
-		happiness: 3
+		happiness: 3,
+		price : 7
 	},
 	{
 		name: 'basil',
@@ -63,7 +68,8 @@ export const plantList = [
 		light: 2,
 		water: 2,
 		cover: basil,
-		happiness: 3
+		happiness: 3,
+		price : 5
 	},
 	{
 		name: 'pothos',
@@ -73,7 +79,8 @@ export const plantList = [
 		light: 2,
 		water: 3,
 		cover: pothos,
-		happiness: 3
+		happiness: 3,
+		price : 10
 	},
 	{
 		name: 'olivier',
@@ -82,7 +89,8 @@ export const plantList = [
 		light: 2,
 		water: 1,
 		cover: olivier,
-		happiness: 2
+		happiness: 2,
+		price : 12
 	},
 	{
 		name: 'succulent',
@@ -91,6 +99,7 @@ export const plantList = [
 		light: 2,
 		water: 1,
 		cover: succulent,
-		happiness: 3
+		happiness: 3,
+		price : 8
 	}
 ]

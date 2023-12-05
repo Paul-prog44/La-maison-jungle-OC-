@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 
 function App() {
-  const [cart, updateCart] = useState([])
+  const [cart, updateCart] = useState(0)
 
   return <div>
             <Banner>
