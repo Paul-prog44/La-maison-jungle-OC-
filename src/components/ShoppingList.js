@@ -1,11 +1,13 @@
 import { plantList } from '../datas/plantList'
 import '../styles/ShoppingList.css'
 import PlantItem from './PlantItem';
+import Categories from './Categories';
+import { useState } from 'react';
 
 //Fonction d'affichage des plantes dispos
 function ShoppingList({ cart, updateCart }) {
 
-    //Filtre des catégories pour éviter redondance
+    const [activeCategory, setActiveCategory] = useState('')
     let categories = [];
     plantList.forEach(function(plant) {
         if (!categories.includes(plant.category)) {
@@ -29,14 +31,15 @@ function ShoppingList({ cart, updateCart }) {
     }
     
     return (
-        <div>
-            <ul>
-                {categories.map((category, index) => (
-                    <li key={`${category}-${index}`}>{ category }</li>
-                ))}
-            </ul>
+        <div className='lmj-shopping-list'>
+			<Categories
+				categories={categories}
+				setActiveCategory={setActiveCategory}
+				activeCategory={activeCategory}
+			/>
             <ul className='lmj-plant-list'>
-                {plantList.map(({id, cover, name, water, light, happiness, price}) => (
+                {plantList.map(({id, cover, name, water, light, happiness, price, category }) => 
+                !activeCategory || activeCategory === category ? (
                     <div key={id}>
                     <PlantItem
                         id={id}
@@ -50,7 +53,8 @@ function ShoppingList({ cart, updateCart }) {
                     <button onClick={() => addToCart(name, price)}>Ajouter</button>
                     </div>
                     
-                ))}
+                ) : null
+                )}
             </ul>
         </div>
         )
