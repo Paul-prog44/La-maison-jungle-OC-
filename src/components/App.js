@@ -9,7 +9,8 @@ import { useState } from 'react';
 
 
 function App() {
-  const [cart, updateCart] = useState(0)
+  //Initialisation du state Cart en tableau vide
+  const [cart, updateCart] = useState([])
 
   return <div>
             <Banner>

@@ -12,6 +12,21 @@ function ShoppingList({ cart, updateCart }) {
             categories.push(plant.category);
         }
     })
+
+    function addToCart(name, price) {
+        const currentPlantAdded = cart.find((plant) => plant.name === name)
+        if (currentPlantAdded) {
+            const cartFilteredCurrentPlant = cart.filter(
+                (plant)=> plant.name !==name
+            )
+            updateCart([
+                ...cartFilteredCurrentPlant,
+                { name, price, amount: currentPlantAdded.amount +1 }
+            ])
+        } else {
+            updateCart([...cart, {name, price, amount: 1 }])
+        }
+    }
     
     return (
         <div>
@@ -21,7 +36,7 @@ function ShoppingList({ cart, updateCart }) {
                 ))}
             </ul>
             <ul className='lmj-plant-list'>
-                {plantList.map(({id, cover, name, water, light, happiness}) => (
+                {plantList.map(({id, cover, name, water, light, happiness, price}) => (
                     <div key={id}>
                     <PlantItem
                         id={id}
@@ -30,8 +45,9 @@ function ShoppingList({ cart, updateCart }) {
                         water={water}
                         light={light}
                         happiness={happiness}
+                        price={price}
                         />
-                    <button onClick={() => updateCart(cart + 1)}>Ajouter</button>
+                    <button onClick={() => addToCart(name, price)}>Ajouter</button>
                     </div>
                     
                 ))}
